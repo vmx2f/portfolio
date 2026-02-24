@@ -1,55 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import Popover from "../ui/pop-over";
-import { getTechIcon } from "../ui/icon-mappings";
-import { useI18n } from "@/i18n/I18nProvider";
-import Modal from "../ui/modal";
-
-interface Project {
-  title: string;
-  date: string;
-  technologies: string[];
-  description: string;
-  url: string;
-}
+import Popover from "../layout/pop-over";
+import { getTechIcon } from "../layout/icon-mappings";
+import Modal from "../layout/modal";
+import { useProjectsData, type Project } from "../../_constants/projects";
+import { useExtracted } from "next-intl";
+import { techNameMap } from "../../_constants/tech-mappings";
 
 const Projects = () => {
-  const { t } = useI18n();
+  const projects = useProjectsData();
+  const t = useExtracted();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  const techNameMap: { [key: string]: string } = {
-    'tailwind': 'Tailwind CSS',
-    'typescript': 'TypeScript',
-    'javascript': 'JavaScript',
-    'html5': 'HTML5',
-    'css3': 'CSS3',
-    'react': 'React',
-    'next': 'Next',
-    'git': 'Git',
-    'github': 'GitHub',
-    'linux': 'Linux',
-    'powershell': 'PowerShell',
-    'python': 'Python',
-    'java': 'Java',
-    'c#': 'C#',
-    'mysql': 'MySQL',
-    'postgresql': 'PostgreSQL',
-    'unity': 'Unity',
-    'godot': 'Godot',
-    'docker': 'Docker',
-    'figma': 'Figma',
-    'angular': 'Angular',
-    'bootstrap': 'Bootstrap',
-    'affinity studio': 'Affinity Studio',
-    'photoshop': 'Photoshop',
-    'illustrator': 'Illustrator',
-    'canva': 'Canva',
-    'krita': 'Krita',
-    'blender': 'Blender',
-    'react native': 'React Native',
-    'flutter': 'Flutter'
-  };
 
   const getTechIconForProject = (techName: string, size: string = 'text-2xl') => {
     // First try to find a mapped name
@@ -77,9 +39,9 @@ const Projects = () => {
 
   return (
     <div className="animate-swipe-in border border-subtle bg-background rounded-lg py-5 mb-50 bg-main/90 w-full max-h-[calc(100vh-200px)] overflow-y-auto pb-8 scrollbar-thin scrollbar-thumb-theme-color/20 scrollbar-track-transparent hover:scrollbar-thumb-theme-color/30 transition-colors duration-300">
-      {t.projects.project_list.map((p: Project) => (
+      {projects.map((p: Project) => (
         <a
-          key={p.title}
+          key={p.slug}
           href="#"
           onClick={(e) => {
             e.preventDefault();
@@ -149,7 +111,7 @@ const Projects = () => {
             <hr className="border-t border-hover my-8" />
 
             <div className="mb-8">
-              <strong className="text-xl text-theme-color block mb-4">{t.projects.technologies_used}</strong>
+              <strong className="text-xl text-theme-color block mb-4">{t("Technologies Used")}</strong>
               <div className="flex flex-wrap gap-4 items-center">
                 {selectedProject.technologies.map((techName) => {
                   const icon = getTechIconForProject(techName, 'text-2xl');
@@ -176,7 +138,7 @@ const Projects = () => {
 
             <div className="flex justify-end gap-6 mt-10">
               <a href={selectedProject.url} target="_blank" rel="noopener noreferrer" className="bg-theme-color/10 text-white py-3 px-8 rounded-lg text-1xl cursor-pointer border-theme-color border hover:bg-theme-color/60 transition">
-                {t.common.view_project}
+                {t("View Project")}
               </a>
             </div>
           </div>

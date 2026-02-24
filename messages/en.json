@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "mK2/Oy": "Hi, I'm Jason",
+    "HvynYL": "I craft clean, functional, and visually bold interactive experiences, blending design and code to let real-world tools shape digital spaces.",
+    "Vn76qV": "Github",
+    "2wn8UQ": "Personal Blog",
+    "PsVFRc": "Tech Blog"
+  },
+  "I5AIev": "Technologies Used",
+  "yeEJd4": "View Project",
+  "projects": {
+    "title": {
+      "QDsuFs": "Amoled Dark Theme for Arch Linux with Hyprland",
+      "fq3pxd": "Lively Captions - Real-time Translation and Subtitles for Desktop",
+      "Ahb94k": "Ñawi Mobile and Web App",
+      "5Bub3G": "Minimal Script for Windows Terminal Configuration",
+      "KNZAKH": "They are watching (Game)",
+      "u8PCci": "Movie-fy",
+      "nCjNtI": "UnixPec",
+      "PHCtJ+": "Map-ly"
+    },
+    "description": {
+      "D7qQDi": "An elegant collection of dotfiles created for Arch Linux, my love letter to AMOLED aesthetics.",
+      "EUj8Mh": "Lively Captions is a desktop application for real-time voice transcription and translation built with Python. It captures your voice via microphone or computer audio, transcribes it using Whisper, and also translates it to other languages.",
+      "7p6Ao9": "A student report management application developed for Android and web.",
+      "jSvGWF": "A minimalist PowerShell script to configure Windows Terminal with a custom theme, font, and settings.",
+      "DhYUIL": "A small game demo made in Godot in collaboration with StraGeo Studios for Brackeys GameJam 2025 - 1.",
+      "8JTau4": "A simple application to search for movies using the TMDB API.",
+      "rx3IvR": "A minimalist and opinionated daily task organization application made in Java.",
+      "Cqrajh": "A demo map application to mark dangerous areas based on reliable sources."
+    }
+  },
+  "metadata": {
+    "keywords": {
+      "+gQvgd": "keyword-1",
+      "+PoYfH": "keyword-2"
+    },
+    "0DlqN9": "vmx's Blog!",
+    "+BhY5h": "This is my small space on the internet, enjoy your stay! ^^",
+    "xl217p": "title",
+    "OE94n1": "description",
+    "Xstf7k": "alt text",
+    "ejEGdx": "Home"
+  },
+  "commons": {
+    "PsVFRc": "Tech Blog",
+    "2wn8UQ": "Personal Blog"
+  },
+  "home": {
+    "UxTJRa": "Projects"
+  },
+  "dock": {
+    "itPgxd": "Profile",
+    "UxTJRa": "Projects",
+    "M6hpAz": "Styles",
+    "y1Z3or": "Language"
+  }
+}

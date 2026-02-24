@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "mK2/Oy": "Hola, soy Jason",
+    "HvynYL": "Creo experiencias interactivas limpias, funcionales y visualmente audaces, combinando diseño y código para que las herramientas del mundo real den forma a los espacios digitales.",
+    "Vn76qV": "Github",
+    "2wn8UQ": "Blog Personal",
+    "PsVFRc": "Blog Tecnológico"
+  },
+  "I5AIev": "Tecnologías Utilizadas",
+  "yeEJd4": "Ver Proyecto",
+  "projects": {
+    "title": {
+      "QDsuFs": "Tema Oscuro Amoled para Arch Linux con Hyprland",
+      "fq3pxd": "Lively Captions - Traducción y Subtítulos en Tiempo Real para Escritorio",
+      "Ahb94k": "Ñawi App Móvil y Web",
+      "5Bub3G": "Script Minimalista para Configuración de Windows Terminal",
+      "KNZAKH": "Te están vigilando (Juego)",
+      "u8PCci": "Movie-fy",
+      "nCjNtI": "UnixPec",
+      "PHCtJ+": "Map-ly"
+    },
+    "description": {
+      "D7qQDi": "Una colección elegante de dotfiles creada para Arch Linux, mi carta de amor a la estética AMOLED.",
+      "EUj8Mh": "Lively Captions es una aplicación de escritorio para transcripción y traducción de voz en tiempo real construida con Python. Captura tu voz a través del micrófono o audio de la computadora, la transcribe usando Whisper y también la traduce a otros idiomas.",
+      "7p6Ao9": "Una aplicación de gestión de informes estudiantiles desarrollada para Android y web.",
+      "jSvGWF": "Un script minimalista de PowerShell para configurar Windows Terminal con un tema personalizado, fuente y configuraciones.",
+      "DhYUIL": "Un pequeño demo de juego hecho en Godot en colaboración con StraGeo Studios para Brackeys GameJam 2025 - 1.",
+      "8JTau4": "Una aplicación simple para buscar películas usando la API de TMDB.",
+      "rx3IvR": "Una aplicación minimalista y opinada de organización de tareas diarias hecha en Java.",
+      "Cqrajh": "Una aplicación de mapa demo para marcar áreas peligrosas basadas en fuentes confiables."
+    }
+  },
+  "metadata": {
+    "keywords": {
+      "+gQvgd": "palabra-clave-1",
+      "+PoYfH": "palabra-clave-2"
+    },
+    "0DlqN9": "¡Blog de vmx!",
+    "+BhY5h": "Este es mi pequeño espacio en internet, ¡disfruta tu estancia! ^^",
+    "xl217p": "título",
+    "OE94n1": "descripción",
+    "Xstf7k": "texto alternativo",
+    "ejEGdx": "Inicio"
+  },
+  "commons": {
+    "PsVFRc": "Blog Tecnológico",
+    "2wn8UQ": "Blog Personal"
+  },
+  "home": {
+    "UxTJRa": "Proyectos"
+  },
+  "dock": {
+    "itPgxd": "Perfil",
+    "UxTJRa": "Proyectos",
+    "M6hpAz": "Estilos",
+    "y1Z3or": "Idioma"
+  }
+}

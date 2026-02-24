@@ -34,7 +34,7 @@ const ThemeContextClass = createContext<ThemeContextType>({
   setAccent: () => { },
 });
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ThemeContext = ({ children }: ThemeProviderProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [selectedAccent, setSelectedAccent] = useState<keyof typeof ACCENT_COLORS>('purple');
 
@@ -108,7 +108,7 @@ export const useTheme = () => {
   return context;
 };
 
-export const ThemeContext = () => {
+export const ThemeContexts = () => {
   const themeScript = `
     (function() {
       const theme = localStorage.getItem('theme');
