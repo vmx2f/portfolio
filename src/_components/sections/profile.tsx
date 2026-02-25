@@ -9,7 +9,7 @@ import { useExtracted } from "next-intl";
 export default function Profile() {
     const t = useExtracted('profile')
     const params = useParams();
-    const pfpImage = "/images/profile.webp";
+    const pfpImage = "/images/vmx2f.webp";
     return (
         <section className="w-full h-full ">
             <GlareHover
@@ -28,8 +28,8 @@ export default function Profile() {
                     />
 
                     <div className='mt-6 md:mt-0 md:ml-8 text-center md:text-left'>
-                        <h1 className="text-3xl md:text-4xl font-bold text-primary-text">{t("Hi, I'm Jason")}</h1>
-                        <p className="mt-3 md:mt-4 text-theme-color">{t("I craft clean, functional, and visually bold interactive experiences, blending design and code to let real-world tools shape digital spaces.")}</p>
+                        <h1 className="text-3xl md:text-4xl font-bold text-primary-text">{t("Hi there!")}</h1>
+                        <p className="mt-3 md:mt-4 text-theme-color">{t("I'm Jason, aka @vmx2f, I craft clean, functional, and visually bold interactive experiences, blending design and code to let real-world tools shape digital spaces.")}</p>
                         <div className='flex gap-1 items-center mt-4 justify-center align-middle sm:justify-start sm:align-center'>
                             <Popover
                                 trigger={

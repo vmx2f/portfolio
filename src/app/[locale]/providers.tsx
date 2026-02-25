@@ -2,19 +2,25 @@
 
 import { ThemeProvider } from 'next-themes';
 import CursorFollower from "@/_components/layout/cursor-follower";
-import { useState } from 'react';
-import { House, Layers } from "lucide-react";
+import { Book, House, Layers } from "lucide-react";
 import PopStyles from "@/_components/pop-out/pop-styles";
 import PopLanguage from "@/_components/pop-out/pop-language";
 import SquigglyLine from '@/_components/layout/squiggly-line';
 import Dock from '@/_components/layout/dock-bar';
 import { useExtracted } from 'next-intl';
+import { ThemeContext } from '@/_components/contexts/theme-context';
+import { usePathname, useRouter } from '@/i18n/navigation';
 
 export function DockWrapper() {
-    const t = useExtracted('dock')
-    const [activeSection, setActiveSection] = useState('home');
-    const [isStylesOpen, setIsStylesOpen] = useState(false);
-    const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+    const t = useExtracted('commons')
+    const pathname = usePathname();
+    const router = useRouter();
+
+    const activeSection = pathname.startsWith('/projects')
+        ? 'projects'
+        : pathname.startsWith('/blog')
+            ? 'blog'
+            : 'profile';
 
     return (
         <Dock
@@ -22,19 +28,25 @@ export function DockWrapper() {
                 icon: <House size={20} />,
                 label: t("Profile"),
                 onClick: () => {
-                    window.location.href = `/home#profile`;
-                    setActiveSection('profile');
+                    router.push('/');
                 },
-                className: `hover:bg-theme-color/10 ${activeSection === 'profile' || activeSection === 'home' ? 'bg-theme-color/20' : ''}`
+                className: `hover:bg-theme-color/10 ${activeSection === 'profile' ? 'bg-theme-color/20' : ''}`
             },
             {
                 icon: <Layers size={20} />,
                 label: t("Projects"),
                 onClick: () => {
-                    window.location.href = `/home#projects`;
-                    setActiveSection('projects');
+                    router.push('/projects');
                 },
                 className: `hover:bg-theme-color/10 ${activeSection === 'projects' ? 'bg-theme-color/20' : ''}`
+            },
+            {
+                icon: <Book size={20} />,
+                label: t("Blog"),
+                onClick: () => {
+                    router.push('/blog');
+                },
+                className: `hover:bg-theme-color/10 ${activeSection === 'blog' ? 'bg-theme-color/20' : ''}`
             },
             {
                 label: 'separator',
@@ -44,14 +56,14 @@ export function DockWrapper() {
                 icon: (
                     <PopStyles />
                 ),
-                label: isStylesOpen ? null : t("Styles"),
+                label: t("Styles"),
                 className: '!p-0'
             },
             {
                 icon: (
                     <PopLanguage />
                 ),
-                label: isLanguageOpen ? null : t("Language"),
+                label: t("Language"),
                 className: '!p-0'
             },]}
             panelHeight={64}
@@ -69,18 +81,20 @@ type Props = {
 export function Providers({ children }: Props) {
     return (
         <ThemeProvider attribute="class" defaultTheme="dark">
-            <div className="fixed inset-0 overflow-hidden -z-10">
-                <SquigglyLine
-                    count={5}
-                    speed={15}
-                    minSegments={3}
-                    maxSegments={6}
-                    className="opacity-10 dark:opacity-30"
-                />
-            </div>
-            <CursorFollower />
-            <DockWrapper/>
-            {children}
+            <ThemeContext>
+                <div className="fixed inset-0 overflow-hidden -z-10">
+                    <SquigglyLine
+                        count={5}
+                        speed={15}
+                        minSegments={3}
+                        maxSegments={6}
+                        className="opacity-10 dark:opacity-30"
+                    />
+                </div>
+                <CursorFollower />
+                <DockWrapper/>
+                {children}
+            </ThemeContext>
         </ThemeProvider>
     );
 }

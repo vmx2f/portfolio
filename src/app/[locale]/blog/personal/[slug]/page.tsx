@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
-import { CustomMDX } from '@/_components/layout/mdx'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import { useMDXComponents } from '@/mdx-components'
 import { formatDate, getPersonalPosts } from '../../utils'
 import { baseUrl } from '@/app/sitemap'
 import Link from "next/link"
@@ -110,7 +111,10 @@ export default async function Blog({ params }: { params: Promise<{ locale: strin
               )}
             </div>
             <article className="prose prose-theme max-w-none">
-              <CustomMDX source={post.content} />
+              <MDXRemote 
+                source={post.content} 
+                components={useMDXComponents()}
+              />
             </article>
           </div>
         </div>

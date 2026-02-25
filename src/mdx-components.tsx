@@ -1,172 +1,208 @@
 import type { MDXComponents } from 'mdx/types'
 import Image, { ImageProps } from 'next/image'
+import Link from 'next/link'
+import { highlight } from 'sugar-high'
+import React from 'react'
 
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
 // React component you want, including inline styles,
 // components from other libraries, and more.
 
+function slugify(str: string): string {
+  return str
+    .toString()
+    .toLowerCase()
+    .trim() // Remove whitespace from both ends of a string
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/&/g, '-and-') // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+}
+
+function createHeading(level: number) {
+  const Heading = ({ children }: { children: React.ReactNode }) => {
+    let slug = slugify(children as string)
+    const gradientClasses = {
+      1: "from-theme-color/20 via-transparent to-transparent opacity-30",
+      2: "from-theme-color/10 via-transparent to-transparent opacity-20", 
+      3: "from-theme-color/5 via-transparent to-transparent opacity-15",
+      4: "from-theme-color/5 via-transparent to-transparent opacity-10",
+      5: "from-theme-color/5 via-transparent to-transparent opacity-8",
+      6: "from-theme-color/5 via-transparent to-transparent opacity-6"
+    }
+    const textClasses = {
+      1: "text-4xl font-bold text-primary-text mb-6 tracking-tight",
+      2: "text-3xl font-bold text-primary-text mb-4 mt-8 tracking-tight",
+      3: "text-2xl font-bold text-primary-text mb-3 mt-6 tracking-tight", 
+      4: "text-xl font-semibold text-primary-text mb-2 mt-4 tracking-tight",
+      5: "text-lg font-semibold text-primary-text mb-2 mt-4 tracking-tight",
+      6: "text-base font-semibold text-primary-text mb-2 mt-4 tracking-tight"
+    }
+    
+    return (
+      <div className="relative">
+        <div className={`absolute inset-0 bg-gradient-to-r ${gradientClasses[level as keyof typeof gradientClasses]} pointer-events-none`}></div>
+        {React.createElement(
+          `h${level}`,
+          { 
+            id: slug,
+            className: `relative ${textClasses[level as keyof typeof textClasses]} z-10`
+          },
+          [
+            React.createElement('a', {
+              href: `#${slug}`,
+              key: `link-${slug}`,
+              className: 'anchor text-theme-color hover:text-theme-color/80 transition-colors duration-200 underline decoration-2 underline-offset-2',
+            }),
+          ],
+          children
+        )}
+      </div>
+    )
+  }
+
+  Heading.displayName = `Heading${level}`
+  return Heading
+}
+
+function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href?: string }) {
+  let href = props.href
+
+  if (!href) {
+    return (
+      <div className="relative">
+        <div className="absolute inset-0 bg-linear-to-br from-theme-color/8 via-transparent to-transparent opacity-4 pointer-events-none"></div>
+        <a {...props} className="relative text-theme-color hover:text-theme-color/80 transition-all duration-300 underline decoration-2 underline-offset-2 hover:underline hover:decoration-4 z-10" />
+      </div>
+    )
+  }
+
+  if (href.startsWith('/')) {
+    return (
+      <div className="relative">
+        <div className="absolute inset-0 bg-linear-to-br from-theme-color/8 via-transparent to-transparent opacity-4 pointer-events-none"></div>
+        <Link href={href} {...props} className="relative text-theme-color hover:text-theme-color/80 transition-all duration-300 underline decoration-2 underline-offset-2 hover:underline hover:decoration-4 z-10" />
+      </div>
+    )
+  }
+
+  if (href.startsWith('#')) {
+    return (
+      <div className="relative">
+        <div className="absolute inset-0 bg-linear-to-br from-theme-color/8 via-transparent to-transparent opacity-4 pointer-events-none"></div>
+        <a {...props} className="relative text-theme-color hover:text-theme-color/80 transition-all duration-300 underline decoration-2 underline-offset-2 hover:underline hover:decoration-4 z-10" />
+      </div>
+    )
+  }
+
+  return (
+    <div className="relative">
+      <div className="absolute inset-0 bg-linear-to-br from-theme-color/8 via-transparent to-transparent opacity-4 pointer-events-none"></div>
+      <a target="_blank" rel="noopener noreferrer" {...props} className="relative text-theme-color hover:text-theme-color/80 transition-all duration-300 underline decoration-2 underline-offset-2 hover:underline hover:decoration-4 z-10" />
+    </div>
+  )
+}
+
+function Code({ children, ...props }: { children: React.ReactNode } & React.HTMLAttributes<HTMLElement>) {
+  let codeHTML = highlight(children as string)
+  return (
+    <div className="relative">
+      <div className="absolute inset-0 bg-linear-to-br from-theme-color/20 via-transparent to-transparent opacity-10 pointer-events-none"></div>
+      <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} className="relative bg-hover/50 text-primary-text px-2 py-1 rounded-md text-sm font-mono border border-subtle z-10" />
+    </div>
+  )
+}
+
 const components = {
-  // Allows customizing built-in components with theme-aware styling
-  h1: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/20 via-transparent to-transparent opacity-30 pointer-events-none"></div>
-      <h1 className="relative text-4xl font-bold text-primary-text mb-6 tracking-tight z-10">
-        {children}
-      </h1>
-    </div>
-  ),
-  h2: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/10 via-transparent to-transparent opacity-20 pointer-events-none"></div>
-      <h2 className="relative text-3xl font-bold text-primary-text mb-4 mt-8 tracking-tight z-10">
-        {children}
-      </h2>
-    </div>
-  ),
-  h3: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/5 via-transparent to-transparent opacity-15 pointer-events-none"></div>
-      <h3 className="relative text-2xl font-bold text-primary-text mb-3 mt-6 tracking-tight z-10">
-        {children}
-      </h3>
-    </div>
-  ),
-  h4: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/5 via-transparent to-transparent opacity-10 pointer-events-none"></div>
-      <h4 className="relative text-xl font-semibold text-primary-text mb-2 mt-4 tracking-tight z-10">
-        {children}
-      </h4>
-    </div>
-  ),
+  // Enhanced headings with slugify and anchor links
+  h1: createHeading(1),
+  h2: createHeading(2), 
+  h3: createHeading(3),
+  h4: createHeading(4),
+  h5: createHeading(5),
+  h6: createHeading(6),
   p: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-theme-color/3 via-transparent to-transparent opacity-8 pointer-events-none"></div>
-      <p className="relative text-primary-text mb-4 leading-relaxed z-10">
-        {children}
-      </p>
-    </div>
+    <p className="relative text-primary-text mb-4 leading-relaxed before:absolute before:inset-0 before:bg-gradient-to-br before:from-theme-color/3 before:via-transparent before:to-transparent before:opacity-8 before:pointer-events-none z-10">
+      {children}
+    </p>
   ),
-  a: ({ children, href }) => (
-    <a 
-      href={href}
-      className="text-theme-color hover:text-theme-color/80 transition-all duration-300 underline decoration-2 underline-offset-2 hover:underline hover:decoration-4 relative z-10"
-    >
-      <span className="relative z-10">{children}</span>
-    </a>
-  ),
+  // Enhanced link with Next.js routing and external link handling
+  a: CustomLink,
   ul: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-bl from-theme-color/8 via-transparent to-transparent opacity-5 pointer-events-none"></div>
-      <ul className="relative list-disc list-inside mb-4 text-primary-text space-y-2 z-10">
-        {children}
-      </ul>
-    </div>
+    <ul className="relative list-disc list-inside mb-4 text-primary-text space-y-2 before:absolute before:inset-0 before:bg-gradient-to-bl before:from-theme-color/8 before:via-transparent before:to-transparent before:opacity-5 before:pointer-events-none z-10">
+      {children}
+    </ul>
   ),
   ol: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-bl from-theme-color/8 via-transparent to-transparent opacity-5 pointer-events-none"></div>
-      <ol className="relative list-decimal list-inside mb-4 text-primary-text space-y-2 z-10">
-        {children}
-      </ol>
-    </div>
+    <ol className="relative list-decimal list-inside mb-4 text-primary-text space-y-2 before:absolute before:inset-0 before:bg-gradient-to-bl before:from-theme-color/8 before:via-transparent before:to-transparent before:opacity-5 before:pointer-events-none z-10">
+      {children}
+    </ol>
   ),
   li: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-bl from-theme-color/3 via-transparent to-transparent opacity-3 pointer-events-none"></div>
-      <li className="relative text-primary-text leading-relaxed z-10">
-        {children}
-      </li>
-    </div>
+    <li className="relative text-primary-text leading-relaxed before:absolute before:inset-0 before:bg-gradient-to-bl before:from-theme-color/3 before:via-transparent before:to-transparent before:opacity-3 before:pointer-events-none z-10">
+      {children}
+    </li>
   ),
   blockquote: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/15 via-transparent to-transparent opacity-12 pointer-events-none"></div>
-      <blockquote className="relative border-l-4 border-theme-color/30 pl-4 py-2 my-4 bg-hover/30 rounded-r-lg text-secondary-text italic z-10">
-        {children}
-      </blockquote>
-    </div>
+    <blockquote className="relative border-l-4 border-theme-color/30 pl-4 py-2 my-4 bg-hover/30 rounded-r-lg text-secondary-text italic before:absolute before:inset-0 before:bg-gradient-to-r before:from-theme-color/15 before:via-transparent before:to-transparent before:opacity-12 before:pointer-events-none z-10">
+      {children}
+    </blockquote>
   ),
-  code: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-theme-color/20 via-transparent to-transparent opacity-10 pointer-events-none"></div>
-      <code className="relative bg-hover/50 text-primary-text px-2 py-1 rounded-md text-sm font-mono border border-subtle z-10">
-        {children}
-      </code>
-    </div>
-  ),
+  // Enhanced inline code with syntax highlighting
+  code: Code,
   pre: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-theme-color/10 via-transparent to-transparent opacity-8 pointer-events-none"></div>
-      <pre className="relative bg-main border border-subtle rounded-lg p-4 overflow-x-auto mb-4 z-10">
-        {children}
-      </pre>
-    </div>
+    <pre className="relative bg-main border border-subtle rounded-lg p-4 overflow-x-auto mb-4 before:absolute before:inset-0 before:bg-linear-to-br before:from-theme-color/10 before:via-transparent before:to-transparent before:opacity-8 before:pointer-events-none z-10">
+      {children}
+    </pre>
   ),
   hr: () => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/5 via-transparent to-transparent opacity-6 pointer-events-none"></div>
-      <hr className="relative border border-subtle my-8 z-10" />
-    </div>
+    <hr className="relative border border-subtle my-8 before:absolute before:inset-0 before:bg-gradient-to-r before:from-theme-color/5 before:via-transparent before:to-transparent before:opacity-6 before:pointer-events-none z-10" />
   ),
   table: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-theme-color/8 via-transparent to-transparent opacity-4 pointer-events-none"></div>
-      <table className="relative w-full border-collapse border border-subtle rounded-lg overflow-hidden mb-4 z-10">
-        {children}
-      </table>
-    </div>
+    <table className="relative w-full border-collapse border border-subtle rounded-lg overflow-hidden mb-4 before:absolute before:inset-0 before:bg-linear-to-br before:from-theme-color/8 before:via-transparent before:to-transparent before:opacity-4 before:pointer-events-none z-10">
+      {children}
+    </table>
   ),
   th: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/15 via-transparent to-transparent opacity-8 pointer-events-none"></div>
-      <th className="relative bg-hover/50 text-primary-text font-semibold px-4 py-3 text-left border-b border-subtle z-10">
-        {children}
-      </th>
-    </div>
+    <th className="relative bg-hover/50 text-primary-text font-semibold px-4 py-3 text-left border-b border-subtle before:absolute before:inset-0 before:bg-gradient-to-r before:from-theme-color/15 before:via-transparent before:to-transparent before:opacity-8 before:pointer-events-none z-10">
+      {children}
+    </th>
   ),
   td: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/5 via-transparent to-transparent opacity-3 pointer-events-none"></div>
-      <td className="relative px-4 py-3 text-primary-text border-b border-subtle z-10">
-        {children}
-      </td>
-    </div>
+    <td className="relative px-4 py-3 text-primary-text border-b border-subtle before:absolute before:inset-0 before:bg-gradient-to-r before:from-theme-color/5 before:via-transparent before:to-transparent before:opacity-3 before:pointer-events-none z-10">
+      {children}
+    </td>
   ),
   tr: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/3 via-transparent to-transparent opacity-2 pointer-events-none"></div>
-      <tr className="relative last:border-b-0 z-10">
-        {children}
-      </tr>
-    </div>
+    <tr className="relative last:border-b-0 before:absolute before:inset-0 before:bg-gradient-to-r before:from-theme-color/3 before:via-transparent before:to-transparent before:opacity-2 before:pointer-events-none z-10">
+      {children}
+    </tr>
   ),
   img: (props) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-theme-color/10 via-transparent to-transparent opacity-15 pointer-events-none"></div>
-      <Image
-        sizes="100vw"
-        className="rounded-lg shadow-md my-6 max-w-full h-auto relative z-10"
-        {...(props as ImageProps)}
-      />
-    </div>
+    <Image
+      sizes="100vw"
+      className="rounded-lg shadow-md my-6 max-w-full h-auto relative z-10 before:absolute before:inset-0 before:bg-linear-to-br before:from-theme-color/10 before:via-transparent before:to-transparent before:opacity-15 before:pointer-events-none"
+      {...(props as ImageProps)}
+    />
+  ),
+  // Alias for Next.js Image component
+  Image: (props) => (
+    <Image
+      sizes="100vw"
+      className="rounded-lg shadow-md my-6 max-w-full h-auto relative z-10 before:absolute before:inset-0 before:bg-linear-to-br before:from-theme-color/10 before:via-transparent before:to-transparent before:opacity-15 before:pointer-events-none"
+      {...(props as ImageProps)}
+    />
   ),
   strong: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-theme-color/8 via-transparent to-transparent opacity-4 pointer-events-none"></div>
-      <strong className="relative font-bold text-primary-text z-10">
-        {children}
-      </strong>
-    </div>
+    <strong className="relative font-bold text-primary-text before:absolute before:inset-0 before:bg-gradient-to-r before:from-theme-color/8 before:via-transparent before:to-transparent before:opacity-4 before:pointer-events-none z-10">
+      {children}
+    </strong>
   ),
   em: ({ children }) => (
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-theme-color/5 via-transparent to-transparent opacity-3 pointer-events-none"></div>
-      <em className="relative italic text-secondary-text z-10">
-        {children}
-      </em>
-    </div>
+    <em className="relative italic text-secondary-text before:absolute before:inset-0 before:bg-linear-to-br before:from-theme-color/5 before:via-transparent before:to-transparent before:opacity-3 before:pointer-events-none z-10">
+      {children}
+    </em>
   ),
 } satisfies MDXComponents
 

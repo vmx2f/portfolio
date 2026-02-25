@@ -1,7 +1,20 @@
 {
+  "commons": {
+    "tCJSxx": "Light/dark mode",
+    "Q7dLbA": "Light mode",
+    "hMUQH5": "Dark mode",
+    "n02jRA": "Accent color",
+    "2wn8UQ": "Personal Blog",
+    "PsVFRc": "Tech Blog",
+    "itPgxd": "Profile",
+    "UxTJRa": "Projects",
+    "tv5FG3": "Blog",
+    "M6hpAz": "Styles",
+    "y1Z3or": "Language"
+  },
   "profile": {
-    "mK2/Oy": "Hi, I'm Jason",
-    "HvynYL": "I craft clean, functional, and visually bold interactive experiences, blending design and code to let real-world tools shape digital spaces.",
+    "X73pdS": "Hi there!",
+    "S2RPhK": "I'm Jason, aka @vmx2f, I craft clean, functional, and visually bold interactive experiences, blending design and code to let real-world tools shape digital spaces.",
     "Vn76qV": "Github",
     "2wn8UQ": "Personal Blog",
     "PsVFRc": "Tech Blog"
@@ -42,17 +55,7 @@
     "Xstf7k": "alt text",
     "ejEGdx": "Home"
   },
-  "commons": {
-    "PsVFRc": "Tech Blog",
-    "2wn8UQ": "Personal Blog"
-  },
   "home": {
     "UxTJRa": "Projects"
-  },
-  "dock": {
-    "itPgxd": "Profile",
-    "UxTJRa": "Projects",
-    "M6hpAz": "Styles",
-    "y1Z3or": "Language"
   }
 }

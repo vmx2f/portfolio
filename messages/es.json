@@ -1,7 +1,20 @@
 {
+  "commons": {
+    "tCJSxx": "Modo claro/oscuro",
+    "Q7dLbA": "Modo claro",
+    "hMUQH5": "Modo oscuro",
+    "n02jRA": "Color de acento",
+    "2wn8UQ": "Blog Personal",
+    "PsVFRc": "Blog Tecnológico",
+    "itPgxd": "Perfil",
+    "UxTJRa": "Proyectos",
+    "tv5FG3": "Blog",
+    "M6hpAz": "Estilos",
+    "y1Z3or": "Idioma"
+  },
   "profile": {
-    "mK2/Oy": "Hola, soy Jason",
-    "HvynYL": "Creo experiencias interactivas limpias, funcionales y visualmente audaces, combinando diseño y código para que las herramientas del mundo real den forma a los espacios digitales.",
+    "X73pdS": "¡Hola!",
+    "S2RPhK": "Soy Jason, aka @vmx2f, creo experiencias interactivas limpias, funcionales y visualmente audaces, combinando diseño y código para que las herramientas del mundo real den forma a los espacios digitales.",
     "Vn76qV": "Github",
     "2wn8UQ": "Blog Personal",
     "PsVFRc": "Blog Tecnológico"
@@ -42,17 +55,7 @@
     "Xstf7k": "texto alternativo",
     "ejEGdx": "Inicio"
   },
-  "commons": {
-    "PsVFRc": "Blog Tecnológico",
-    "2wn8UQ": "Blog Personal"
-  },
   "home": {
     "UxTJRa": "Proyectos"
-  },
-  "dock": {
-    "itPgxd": "Perfil",
-    "UxTJRa": "Proyectos",
-    "M6hpAz": "Estilos",
-    "y1Z3or": "Idioma"
   }
 }

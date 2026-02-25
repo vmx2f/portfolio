@@ -1,0 +1,61 @@
+{
+  "commons": {
+    "tCJSxx": "ライト/ダークモード",
+    "Q7dLbA": "ライトモード",
+    "hMUQH5": "ダークモード",
+    "n02jRA": "アクセントカラー",
+    "2wn8UQ": "パーソナルブログ",
+    "PsVFRc": "テックブログ",
+    "itPgxd": "プロフィール",
+    "UxTJRa": "プロジェクト",
+    "tv5FG3": "ブログ",
+    "M6hpAz": "スタイル",
+    "y1Z3or": "言語"
+  },
+  "profile": {
+    "X73pdS": "こんにちは！",
+    "S2RPhK": "私はJasonです、@vmx2fとしても知られています。クリーンで機能的、視覚的に大胆なインタラクティブな体験を作り、デザインとコードを融合させて実世界のツールがデジタル空間を形作るようにしています。",
+    "Vn76qV": "Github",
+    "2wn8UQ": "パーソナルブログ",
+    "PsVFRc": "テックブログ"
+  },
+  "I5AIev": "使用技術",
+  "yeEJd4": "プロジェクトを見る",
+  "projects": {
+    "title": {
+      "QDsuFs": "Arch LinuxとHyprland向けのAmoledダークテーマ",
+      "fq3pxd": "Lively Captions - デスクトップ向けリアルタイム翻訳と字幕",
+      "Ahb94k": "ÑawiモバイルおよびWebアプリ",
+      "5Bub3G": "Windows Terminal設定用のミニマルスクリプト",
+      "KNZAKH": "彼らは見ている（ゲーム）",
+      "u8PCci": "Movie-fy",
+      "nCjNtI": "UnixPec",
+      "PHCtJ+": "Map-ly"
+    },
+    "description": {
+      "D7qQDi": "Arch Linux用に作られたエレガントなドットファイルのコレクション、AMOLED美美学への愛のレターです。",
+      "EUj8Mh": "Lively CaptionsはPythonで構築されたリアルタイム音声 transcriptionと翻訳のためのデスクトップアプリケーションです。マイクまたはコンピューターオーディオで音声をキャプチャし、Whisperを使用してtranscriptionし、他の言語にも翻訳します。",
+      "7p6Ao9": "AndroidとWeb用に開発された学生レポート管理アプリケーション。",
+      "jSvGWF": "カスタムテーマ、フォント、設定でWindows Terminalを構成するためのミニマリストPowerShellスクリプト。",
+      "DhYUIL": "StraGeo Studiosと協力してGodotで作られた小さなゲームデモ、Brackeys GameJam 2025 - 1用。",
+      "8JTau4": "TMDB APIを使用して映画を検索するシンプルなアプリケーション。",
+      "rx3IvR": "Javaで作られたミニマリストで意見の強い日常タスク整理アプリケーション。",
+      "Cqrajh": "信頼できる情報源に基づいて危険な地域をマークするためのデモ地図アプリケーション。"
+    }
+  },
+  "metadata": {
+    "keywords": {
+      "+gQvgd": "キーワード-1",
+      "+PoYfH": "キーワード-2"
+    },
+    "0DlqN9": "vmxのブログ！",
+    "+BhY5h": "これはインターネット上の私の小さなスペースです、お楽しみください！ ^^",
+    "xl217p": "タイトル",
+    "OE94n1": "説明",
+    "Xstf7k": "代替テキスト",
+    "ejEGdx": "ホーム"
+  },
+  "home": {
+    "UxTJRa": "プロジェクト"
+  }
+}

@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { getPersonalPosts, getTechPosts, formatDate } from '@/app/[locale]/blog/utils'
+import { getPersonalPosts, getTechPosts, getBlogPosts, formatDate } from '@/app/[locale]/blog/utils'
 
 export function BlogPosts({ route }: { route: string }) {
-  let allBlogs = route === 'personal' ? getPersonalPosts() : getTechPosts()
+  let allBlogs = route === 'personal' ? getPersonalPosts() : route === 'technology' ? getTechPosts() : getBlogPosts()
 
   return (
     /* Changed container to a grid with gap */
@@ -19,7 +19,7 @@ export function BlogPosts({ route }: { route: string }) {
         .map((post, index) => (
           <div key={post.slug} className="w-full flex">
             <Link
-              href={`/blog/${route}/${post.slug}`}
+              href={`/blog/${route === 'all' ? (post.slug.startsWith('personal-') ? 'personal' : 'technology') : route}/${post.slug}`}
               className="block w-full"
             >
               {/* Removed large horizontal margins to fit the grid cells better */}

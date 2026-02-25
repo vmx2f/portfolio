@@ -1,6 +1,6 @@
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useExtracted, useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { useParams } from 'next/navigation';
 import { useState, useTransition } from 'react';
@@ -9,6 +9,7 @@ import Popover from '../layout/pop-over';
 import { Languages } from 'lucide-react';
 
 export default function PopLanguage() {
+    const t = useExtracted('commons');
     const locale = useLocale();
     const router = useRouter();
     const pathname = usePathname();
@@ -17,8 +18,10 @@ export default function PopLanguage() {
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
     const languages = [
-        { code: 'en', name: 'English' },
-        { code: 'es', name: 'Español' }
+        { code: 'en', name: t('English') },
+        { code: 'es', name: t('Spanish') },
+        { code: 'ru', name: t('Russian') },
+        { code: 'jp', name: t('Japanese') },
     ];
 
     function setLanguage(nextLocale: string) {
@@ -49,7 +52,7 @@ export default function PopLanguage() {
         >
             <div className="p-4 bg-main/90 backdrop-blur-lg rounded-lg shadow-lg border border-subtle/50 mb-4">
                 <div className="p-2 rounded-md min-w-[150px]">
-                    <span className="text-secondary-text text-xs mb-2 px-2 block">Select Language</span>
+                    <span className="text-secondary-text text-xs mb-2 px-2 block">{t('Select language')}</span>
                     <div className="flex flex-col gap-1">
                         {languages.map(({ code, name }) => (
                             <button
