@@ -25,12 +25,12 @@ export function useProjectsData(): Project[] {
       url: "https://github.com/vmx2f/.arch-dot-files"
     },
     {
-      slug: "lively-captions",
-      title: t("Lively Captions - Real-time Translation and Subtitles for Desktop"),
+      slug: "live-desktop-captions",
+      title: t("live-desktop-captions - Real-time Translation and Subtitles for Desktop"),
       date: "06/20/2025",
       technologies: ["Python"],
-      description: t2("Lively Captions is a desktop application for real-time voice transcription and translation built with Python. It captures your voice via microphone or computer audio, transcribes it using Whisper, and also translates it to other languages."),
-      url: "https://github.com/vmx2f/Lively-Captions"
+      description: t2("live-desktop-captions is a desktop application for real-time voice transcription and translation built with Python. It captures your voice via microphone or computer audio, transcribes it using Whisper, and also translates it to other languages."),
+      url: "https://github.com/vmx2f/live-desktop-captions"
     },
     {
       slug: "nawi-app",
@@ -38,7 +38,7 @@ export function useProjectsData(): Project[] {
       date: "05/20/2024",
       technologies: ["Flutter", "Figma", "React", "TypeScript", "Next", "Tailwind"],
       description: t2("A student report management application developed for Android and web."),
-      url: "https://github.com/PlaceOrg/Map-ly"
+      url: "https://github.com/4dominic888/NawiApp"
     },
     {
       slug: "minimal-terminal-config",
@@ -53,32 +53,48 @@ export function useProjectsData(): Project[] {
       title: t("They are watching (Game)"),
       date: "02/26/2025",
       technologies: ["Godot", "Git"],
-      description: t2("A small game demo made in Godot in collaboration with StraGeo Studios for Brackeys GameJam 2025 - 1."),
-      url: "https://github.com/Brackeys-GJ/TAW_Game"
+      description: t2("A demo made in Godot in collaboration with StraGeo Studios for Brackeys GameJam 2025 - 1."),
+      url: "https://github.com/Brackeys-GJ/they-are-watching"
     },
     {
-      slug: "movie-fy",
-      title: t("Movie-fy"),
+      slug: "movie-search",
+      title: t("movie-search"),
       date: "01/10/2025",
       technologies: ["React", "TypeScript", "Tailwind"],
       description: t2("A simple application to search for movies using the TMDB API."),
-      url: "https://github.com/vmx2f/Movie-fy"
+      url: "https://github.com/vmx2f/movie-search"
     },
     {
-      slug: "unixpec",
-      title: t("UnixPec"),
+      slug: "recomendations-algorithm",
+      title: t("recomendations-algorithm"),
+      date: "01/10/2025",
+      technologies: ["Python"],
+      description: t2("A console only project on Python about a store where you get recomendations based on your purchases."),
+      url: "https://github.com/vmx2f/recomendations-algorithm"
+    },
+    {
+      slug: "notes-app-java",
+      title: t("notes-app-java"),
       date: "07/13/2023",
       technologies: ["Java"],
       description: t2("A minimalist and opinionated daily task organization application made in Java."),
-      url: "https://github.com/vmx2f/Unix-Pec"
+      url: "https://github.com/vmx2f/notes-app-java"
     },
     {
-      slug: "map-ly",
-      title: t("Map-ly"),
-      date: "12/20/2024",
-      technologies: ["Angular", "TypeScript"],
-      description: t2("A demo map application to mark dangerous areas based on reliable sources."),
-      url: "https://github.com/PlaceOrg/Map-ly"
+      slug: "flappy-bird-unity",
+      title: t("flappy-bird-unity"),
+      date: "07/13/2023",
+      technologies: ["Unity", "C#"],
+      description: t2("Recreation of the game Flappy Bird made on unity for desktop"),
+      url: "https://github.com/vmx2f/flappy-bird-recreation"
+    },
+    {
+      slug: "platformer-game",
+      title: t("platformer-game"),
+      date: "07/13/2023",
+      technologies: ["Unity", "C#"],
+      description: t2("Demo platformer game called Aura."),
+      url: "https://github.com/vmx2f/platformer-game"
     }
   ];
 }

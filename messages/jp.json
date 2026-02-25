@@ -9,8 +9,12 @@
     "Q7dLbA": "ライトモード",
     "hMUQH5": "ダークモード",
     "n02jRA": "アクセントカラー",
+    "b+MRGY": "私のブログのすべてのエントリー！",
     "2wn8UQ": "パーソナルブログ",
     "PsVFRc": "テックブログ",
+    "C7GrE9": "パーソナルブログに戻る",
+    "hY/J52": "私の個人ブログ！",
+    "9600U0": "私のテクノロジーブログ！",
     "itPgxd": "プロフィール",
     "UxTJRa": "プロジェクト",
     "tv5FG3": "ブログ",
@@ -29,23 +33,27 @@
   "projects": {
     "title": {
       "QDsuFs": "Arch LinuxとHyprland向けのAmoledダークテーマ",
-      "fq3pxd": "Lively Captions - デスクトップ向けリアルタイム翻訳と字幕",
+      "b65dqP": "live-desktop-captions - デスクトップ向けリアルタイム翻訳と字幕",
       "Ahb94k": "ÑawiモバイルおよびWebアプリ",
       "5Bub3G": "Windows Terminal設定用のミニマルスクリプト",
       "KNZAKH": "彼らは見ている（ゲーム）",
-      "u8PCci": "Movie-fy",
-      "nCjNtI": "UnixPec",
-      "PHCtJ+": "Map-ly"
+      "rZRiOU": "movie-search",
+      "wrIBsC": "recomendations-algorithm",
+      "YR8gu6": "notes-app-java",
+      "zKxX8S": "flappy-bird-unity",
+      "2A3elC": "platformer-game"
     },
     "description": {
       "D7qQDi": "Arch Linux用に作られたエレガントなドットファイルのコレクション、AMOLED美美学への愛のレターです。",
-      "EUj8Mh": "Lively CaptionsはPythonで構築されたリアルタイム音声 transcriptionと翻訳のためのデスクトップアプリケーションです。マイクまたはコンピューターオーディオで音声をキャプチャし、Whisperを使用してtranscriptionし、他の言語にも翻訳します。",
+      "TBVh/d": "live-desktop-captionsはPythonで構築されたリアルタイム音声 transcriptionと翻訳のためのデスクトップアプリケーションです。マイクまたはコンピューターオーディオで音声をキャプチャし、Whisperを使用してtranscriptionし、他の言語にも翻訳します。",
       "7p6Ao9": "AndroidとWeb用に開発された学生レポート管理アプリケーション。",
       "jSvGWF": "カスタムテーマ、フォント、設定でWindows Terminalを構成するためのミニマリストPowerShellスクリプト。",
-      "DhYUIL": "StraGeo Studiosと協力してGodotで作られた小さなゲームデモ、Brackeys GameJam 2025 - 1用。",
+      "IsxlEc": "StraGeo Studiosと協力してGodotで作られたデモ、Brackeys GameJam 2025 - 1用。",
       "8JTau4": "TMDB APIを使用して映画を検索するシンプルなアプリケーション。",
+      "8PL9N0": "あなたの購入に基づいて推薦を得るストアについてのPythonのみのコンソールプロジェクト。",
       "rx3IvR": "Javaで作られたミニマリストで意見の強い日常タスク整理アプリケーション。",
-      "Cqrajh": "信頼できる情報源に基づいて危険な地域をマークするためのデモ地図アプリケーション。"
+      "FDNslq": "Unityでデスクトップ用に作られたFlappy Birdゲームの再現",
+      "lUbvU/": "Auraというデモプラットフォーマーゲーム。"
     }
   },
   "metadata": {

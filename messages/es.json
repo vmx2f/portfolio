@@ -9,8 +9,12 @@
     "Q7dLbA": "Modo claro",
     "hMUQH5": "Modo oscuro",
     "n02jRA": "Color de acento",
+    "b+MRGY": "¡Todas las entradas de mi blog!",
     "2wn8UQ": "Blog Personal",
     "PsVFRc": "Blog Tecnológico",
+    "C7GrE9": "Volver al Blog Personal",
+    "hY/J52": "¡Mi blog personal!",
+    "9600U0": "¡Mi blog de tecnología!",
     "itPgxd": "Perfil",
     "UxTJRa": "Proyectos",
     "tv5FG3": "Blog",
@@ -29,23 +33,27 @@
   "projects": {
     "title": {
       "QDsuFs": "Tema Oscuro Amoled para Arch Linux con Hyprland",
-      "fq3pxd": "Lively Captions - Traducción y Subtítulos en Tiempo Real para Escritorio",
+      "b65dqP": "live-desktop-captions - Traducción y Subtítulos en Tiempo Real para Escritorio",
       "Ahb94k": "Ñawi App Móvil y Web",
       "5Bub3G": "Script Minimalista para Configuración de Windows Terminal",
       "KNZAKH": "Te están vigilando (Juego)",
-      "u8PCci": "Movie-fy",
-      "nCjNtI": "UnixPec",
-      "PHCtJ+": "Map-ly"
+      "rZRiOU": "movie-search",
+      "wrIBsC": "recomendations-algorithm",
+      "YR8gu6": "notes-app-java",
+      "zKxX8S": "flappy-bird-unity",
+      "2A3elC": "platformer-game"
     },
     "description": {
       "D7qQDi": "Una colección elegante de dotfiles creada para Arch Linux, mi carta de amor a la estética AMOLED.",
-      "EUj8Mh": "Lively Captions es una aplicación de escritorio para transcripción y traducción de voz en tiempo real construida con Python. Captura tu voz a través del micrófono o audio de la computadora, la transcribe usando Whisper y también la traduce a otros idiomas.",
+      "TBVh/d": "live-desktop-captions es una aplicación de escritorio para transcripción y traducción de voz en tiempo real construida con Python. Captura tu voz a través del micrófono o audio de la computadora, la transcribe usando Whisper y también la traduce a otros idiomas.",
       "7p6Ao9": "Una aplicación de gestión de informes estudiantiles desarrollada para Android y web.",
       "jSvGWF": "Un script minimalista de PowerShell para configurar Windows Terminal con un tema personalizado, fuente y configuraciones.",
-      "DhYUIL": "Un pequeño demo de juego hecho en Godot en colaboración con StraGeo Studios para Brackeys GameJam 2025 - 1.",
+      "IsxlEc": "Un demo hecho en Godot en colaboración con StraGeo Studios para Brackeys GameJam 2025 - 1.",
       "8JTau4": "Una aplicación simple para buscar películas usando la API de TMDB.",
+      "8PL9N0": "Un proyecto de solo consola en Python sobre una tienda donde obtienes recomendaciones basadas en tus compras.",
       "rx3IvR": "Una aplicación minimalista y opinada de organización de tareas diarias hecha en Java.",
-      "Cqrajh": "Una aplicación de mapa demo para marcar áreas peligrosas basadas en fuentes confiables."
+      "FDNslq": "Recreación del juego Flappy Bird hecho en unity para escritorio",
+      "lUbvU/": "Juego de plataforma demo llamado Aura."
     }
   },
   "metadata": {

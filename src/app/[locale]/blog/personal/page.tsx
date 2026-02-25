@@ -48,7 +48,7 @@ export default function Page() {
     <section className="relative h-screen w-full overflow-hidden p-8 md:p-10 flex items-center justify-center">
       <div className="w-full max-w-4xl animate-swipe-in">
         <div className="flex items-center justify-between mb-8">
-          <h1 className="font-bold text-3xl md:text-4xl text-primary-text tracking-tighter">My Personal Blog</h1>
+          <h1 className="font-bold text-3xl md:text-4xl text-primary-text tracking-tighter">{t("My personal blog!")}</h1>
           <div className="flex items-center gap-2 text-theme-color">
             <Link href={`/blog/technology`} className="flex bg-hover/80 p-3 rounded-lg transition-all duration-200 border  border-theme-color/30 cursor-pointer hover:bg-theme-color/10 items-center gap-2">
                 <MdArrowOutward className="inline" />

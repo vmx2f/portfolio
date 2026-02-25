@@ -9,8 +9,12 @@
     "Q7dLbA": "Light mode",
     "hMUQH5": "Dark mode",
     "n02jRA": "Accent color",
+    "b+MRGY": "All my Blog entries!",
     "2wn8UQ": "Personal Blog",
     "PsVFRc": "Tech Blog",
+    "C7GrE9": "Back to Personal Blog",
+    "hY/J52": "My personal blog!",
+    "9600U0": "My technology blog!",
     "itPgxd": "Profile",
     "UxTJRa": "Projects",
     "tv5FG3": "Blog",
@@ -29,23 +33,27 @@
   "projects": {
     "title": {
       "QDsuFs": "Amoled Dark Theme for Arch Linux with Hyprland",
-      "fq3pxd": "Lively Captions - Real-time Translation and Subtitles for Desktop",
+      "b65dqP": "live-desktop-captions - Real-time Translation and Subtitles for Desktop",
       "Ahb94k": "Ñawi Mobile and Web App",
       "5Bub3G": "Minimal Script for Windows Terminal Configuration",
       "KNZAKH": "They are watching (Game)",
-      "u8PCci": "Movie-fy",
-      "nCjNtI": "UnixPec",
-      "PHCtJ+": "Map-ly"
+      "rZRiOU": "movie-search",
+      "wrIBsC": "recomendations-algorithm",
+      "YR8gu6": "notes-app-java",
+      "zKxX8S": "flappy-bird-unity",
+      "2A3elC": "platformer-game"
     },
     "description": {
       "D7qQDi": "An elegant collection of dotfiles created for Arch Linux, my love letter to AMOLED aesthetics.",
-      "EUj8Mh": "Lively Captions is a desktop application for real-time voice transcription and translation built with Python. It captures your voice via microphone or computer audio, transcribes it using Whisper, and also translates it to other languages.",
+      "TBVh/d": "live-desktop-captions is a desktop application for real-time voice transcription and translation built with Python. It captures your voice via microphone or computer audio, transcribes it using Whisper, and also translates it to other languages.",
       "7p6Ao9": "A student report management application developed for Android and web.",
       "jSvGWF": "A minimalist PowerShell script to configure Windows Terminal with a custom theme, font, and settings.",
-      "DhYUIL": "A small game demo made in Godot in collaboration with StraGeo Studios for Brackeys GameJam 2025 - 1.",
+      "IsxlEc": "A demo made in Godot in collaboration with StraGeo Studios for Brackeys GameJam 2025 - 1.",
       "8JTau4": "A simple application to search for movies using the TMDB API.",
+      "8PL9N0": "A console only project on Python about a store where you get recomendations based on your purchases.",
       "rx3IvR": "A minimalist and opinionated daily task organization application made in Java.",
-      "Cqrajh": "A demo map application to mark dangerous areas based on reliable sources."
+      "FDNslq": "Recreation of the game Flappy Bird made on unity for desktop",
+      "lUbvU/": "Demo platformer game called Aura."
     }
   },
   "metadata": {
