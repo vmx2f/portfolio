@@ -1,8 +1,6 @@
 import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import createMDX from '@next/mdx'
-// import "./src/env/server";
-// import "./src/env/client";
 
 const withNextIntl = createNextIntlPlugin({
   experimental: {
