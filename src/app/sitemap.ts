@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
     // Just an example of sitemap, change to current url
-      url: "/",
+      url: "https://0xslyv.space",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,

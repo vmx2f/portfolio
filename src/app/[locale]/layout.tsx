@@ -43,14 +43,14 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'vmx - Full-stack Developer Portfolio',
+      title: t('vmx - Full-stack Developer Portfolio'),
       siteId: '1467726470533754880',
       creator: '@vmx2f',
-      description: 'Portfolio showcasing interactive web experiences built with modern technologies',
+      description: t('Portfolio showcasing interactive web experiences built with modern technologies'),
       images: [
         {
           url: `https://0xslyv.space/images/banner-1.png`,
-          alt: 'vmx portfolio preview image',
+          alt: t('vmx portfolio preview image'),
         }
       ],
     },
